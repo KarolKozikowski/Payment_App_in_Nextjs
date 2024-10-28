@@ -11,12 +11,11 @@ export default function Home() {
     }
     const displayPaymentHistory = Data.map((record, index)=>{
     return (
-        <tr key={index}>
+        <tr onClick={()=>openMenu(record)} key={index}>
             <td>{record.title}</td>
             <td>{record.amount}</td>
             <td>{record.category}</td>
             <td>{record.date}</td>
-            <td><button onClick={()=>openMenu(record)}>more</button></td>
         </tr>
     )
   })
@@ -32,7 +31,6 @@ export default function Home() {
             <td>Amount</td>
             <td>Category</td>
             <td>Date</td>
-            <td>Description</td>
           </tr>
           </thead>
           <tbody>
@@ -41,8 +39,31 @@ export default function Home() {
         </table>
           {
               selectedCharge && (
-                  <div>
-                      <p>name: {selectedCharge.title}</p>
+                  <div className="infobox">
+                      <table className="more">
+                          <tbody>
+                              <tr>
+                                  <td colSpan="2" className="name">{selectedCharge.title}</td>
+                              </tr>
+                              <tr>
+                                  <th>CHARGE</th>
+                                  <td>{selectedCharge.amount}</td>
+                              </tr>
+                              <tr>
+                                  <th>DATE</th>
+                                  <td>{selectedCharge.date}</td>
+                              </tr>
+                              <tr>
+                                  <th>DESCRIPTION</th>
+                                  <td>{selectedCharge.description}</td>
+                              </tr>
+                              <tr>
+                                  <th>RECIPIENT</th>
+                                  <td>{selectedCharge.recipient}</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <button onClick={closeMenu} className="x">X</button>
                   </div>
               )
           }

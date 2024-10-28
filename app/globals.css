@@ -15,7 +15,7 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: linear-gradient(180deg, rgba(47,47,47,1) 0%, rgb(44, 44, 44) 100%) fixed;
   font-family: Arial, Helvetica, sans-serif;
 }
 .title{
@@ -27,7 +27,8 @@ table{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  border: none;
+  border-collapse: separate;
+  border-spacing: 0 3px;
 }
 th, td{
   padding: 10px 20px;
@@ -38,9 +39,40 @@ thead{
 tbody{
   background: #232323;
 }
-tbody td{
-  border-top: solid var(--background) 2px;
-}
 tbody tr:hover{
   background-color: #171717;
+}
+.infobox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+}
+.infobox table{
+  margin-top: 30vh;
+  width: 70vw;
+  border-collapse: separate;
+  border-spacing: 1px 3px;
+}
+.infobox td{
+  border: none;
+}
+.infobox tbody tr:hover{
+  background: #232323;
+}
+.name{
+  background: #243950;
+}
+.x{
+  position: absolute;
+  right: 13.8vw;
+  top: 27vh;
+  scale: 150%;
+  opacity: 0.75;
+}
+.x:hover{
+  opacity: 1;
 }
