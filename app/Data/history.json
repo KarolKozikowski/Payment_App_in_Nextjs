@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Zabka, strzeclow 32",
+    "amount": 150,
+    "category": "food",
+    "date": "2024-04-10",
+    "description": "Zakup produktów spożywczych"
+  },
+  {
+    "id": 2,
+    "title": "UPC Warszawa",
+    "amount": 200,
+    "category": "bills",
+    "date": "2024-04-05",
+    "description": "Miesięczna opłata za internet"
+  },
+  {
+    "id": 3,
+    "title": "Multikino Forum",
+    "amount": 55,
+    "category": "entertainment",
+    "date": "2024-03-25",
+    "description": "Bilet na film 3D: Cars"
+  }
+]
