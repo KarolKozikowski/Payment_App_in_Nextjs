@@ -29,11 +29,17 @@ export default function Home() {
           <tr>
             <td>Title</td>
             <td>Amount</td>
-            <td>Category</td>
-            <td>Date</td>
+            <td><select defaultValue='0'>
+                <option value='0' disabled hidden>Category</option>
+                <option value='1'>All</option>
+                <option value='2'>food</option>
+                <option value='3'>bills</option>
+                <option value='4'>entertainment</option>
+            </select></td>
+              <td>Date</td>
           </tr>
           </thead>
-          <tbody>
+            <tbody>
           {displayPaymentHistory}
           </tbody>
         </table>

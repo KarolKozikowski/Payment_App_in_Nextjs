@@ -76,3 +76,7 @@ tbody tr:hover{
 .x:hover{
   opacity: 1;
 }
+select{
+  background: #243950;
+  text-align: center;
+}
