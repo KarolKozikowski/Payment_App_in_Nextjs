@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Zabka, strzeclow 32",
     "amount": 150,
-    "category": "food",
+    "category": "Food",
     "date": "2024-04-10",
     "description": "Zakup produktów spożywczych",
     "recipient": "PL17116018693104866631092421"
@@ -12,7 +12,7 @@
     "id": 2,
     "title": "UPC Warszawa",
     "amount": 200,
-    "category": "bills",
+    "category": "Bills",
     "date": "2024-04-05",
     "description": "Miesięczna opłata za internet",
     "recipient": "PL08188062902039901470996125"
@@ -21,7 +21,7 @@
     "id": 3,
     "title": "Multikino Forum",
     "amount": 55,
-    "category": "entertainment",
+    "category": "Entertainment",
     "date": "2024-03-25",
     "description": "Bilet na film 3D: Cars",
     "recipient": "PL61105026445870255073832431"
@@ -30,9 +30,18 @@
     "id": 4,
     "title": "VOLKSWAGEN PLICHTA",
     "amount": 1800,
-    "category": "bills",
+    "category": "Bills",
     "date": "2024-07-10",
     "description": "Opłata za leasing",
     "recipient": "PL87213000625646235566469941"
+  },
+  {
+    "id": 5,
+    "title": "Steam",
+    "amount": 25,
+    "category": "Other",
+    "date": "2024-07-11",
+    "description": "GTA6",
+    "recipient": "PL82213999625886235561129251"
   }
 ]
