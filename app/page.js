@@ -1,23 +1,37 @@
 "use client"
 import Data from "./Data/history.json"
 import React, {useState} from "react";
+
 export default function Home() {
     const [selectedCharge, setSelectedCharge] = useState(null);
     const openMenu = (charge)=>{
         setSelectedCharge(charge);
     }
-    const closeMenu = (charge) =>{
+    const closeMenu = () =>{
         setSelectedCharge(null);
+    }
+    function displayCategories(){
+        let categories = [];
+        Data.map((record)=>{
+            if(!categories.includes(record.category)){
+                categories.push(record.category);
+            }
+        });
+        return categories.map((record, index) => {
+            return (
+                <option key={index}>{record}</option>
+            );
+        });
     }
     const displayPaymentHistory = Data.map((record, index)=>{
     return (
         <tr onClick={()=>openMenu(record)} key={index}>
             <td>{record.title}</td>
-            <td>{record.amount}</td>
+            <td>{record.amount}zł</td>
             <td>{record.category}</td>
             <td>{record.date}</td>
         </tr>
-    )
+    );
   })
 
   return (
@@ -32,9 +46,7 @@ export default function Home() {
             <td><select defaultValue='0'>
                 <option value='0' disabled hidden>Category</option>
                 <option value='1'>All</option>
-                <option value='2'>food</option>
-                <option value='3'>bills</option>
-                <option value='4'>entertainment</option>
+                {displayCategories()}
             </select></td>
               <td>Date</td>
           </tr>
@@ -53,7 +65,7 @@ export default function Home() {
                               </tr>
                               <tr>
                                   <th>CHARGE</th>
-                                  <td>{selectedCharge.amount}</td>
+                                  <td>{selectedCharge.amount}zł</td>
                               </tr>
                               <tr>
                                   <th>DATE</th>

@@ -34,5 +34,14 @@
     "date": "2024-07-10",
     "description": "Opłata za leasing",
     "recipient": "PL87213000625646235566469941"
+  },
+  {
+    "id": 5,
+    "title": "Steam",
+    "amount": 25,
+    "category": "other",
+    "date": "2024-07-11",
+    "description": "GTA6",
+    "recipient": "PL82213999625886235561129251"
   }
 ]
