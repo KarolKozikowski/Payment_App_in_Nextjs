@@ -22,8 +22,10 @@ body {
   padding: 20px;
   text-align: center;
   background: #232323;
+  cursor: default;
 }
 table{
+  margin-top: 10px;
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
@@ -33,15 +35,21 @@ table{
 }
 th, td{
   padding: 8px 20px;
+  width: 20vw;
 }
 thead{
   background: #243950;
+  cursor: default;
+}
+thead td{
+  padding: 15px;
 }
 tbody{
   background: #232323;
 }
 tbody tr:hover{
-  background-color: #171717;
+  background-color: #1e1e1e;
+  cursor: default;
 }
 .infobox{
   position: fixed;
@@ -60,6 +68,7 @@ tbody tr:hover{
 }
 .infobox td{
   border: none;
+  width: 40vw;
 }
 .infobox tbody tr:hover{
   background: #232323;
@@ -72,7 +81,8 @@ tbody tr:hover{
   right: 13.8vw;
   top: 27vh;
   scale: 150%;
-  opacity: 0.75;
+  opacity: 0.70;
+  transition: opacity 200ms;
 }
 .x:hover{
   opacity: 1;
@@ -80,4 +90,15 @@ tbody tr:hover{
 select{
   background: #243950;
   text-align: center;
+  width: 12vw;
+}
+select:hover{
+  cursor: pointer;
+  scale: 102%;
+}
+option{
+  background: #232323;
+}
+option:checked{
+  background: #243950;
 }
