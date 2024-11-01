@@ -39,13 +39,24 @@ th, td{
 }
 thead{
   background: #243950;
+  color: #bdbdbd;
   cursor: default;
 }
 thead td{
   padding: 15px;
 }
+.highlight{
+  transition: color 200ms;
+}
+.highlight:hover{
+  color: #ffffff;
+}
+.color{
+  color: #ffffff;
+}
 tbody{
   background: #232323;
+  color: #dadada;
 }
 tbody tr:hover{
   background-color: #1e1e1e;
@@ -75,6 +86,7 @@ tbody tr:hover{
 }
 .name{
   background: #243950;
+  color: white;
 }
 .x{
   position: absolute;
@@ -91,10 +103,11 @@ select{
   background: #243950;
   text-align: center;
   width: 12vw;
+  transition: color 200ms;
 }
 select:hover{
   cursor: pointer;
-  scale: 102%;
+  color: white;
 }
 option{
   background: #232323;
