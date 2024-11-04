@@ -11,6 +11,10 @@ export default function Home() {
     const [category, setCategory] = useState(()=>{return "Category"});
     const changeCategory = (newCategory)=>{newCategory.target.value==="All" ? setCategory("Category") : setCategory(newCategory.target.value);}
 
+    const [hidden, setHidden] = useState(()=>{return []});
+    const changeHidden = (id) => setHidden(hidden.concat(id));
+    const hide = (id)=>{changeHidden([...hidden, id]); closeMenu();};
+
     const [sort, setSort] =useState(()=>{return "DateAsc"});
     const changeSortToTitle = ()=>{sort==="Title" ? setSort("TitleRev") : setSort("Title");}
     const changeSortToAmount = () => {sort==="AmountAsc" ? setSort("AmountDesc") : setSort("AmountAsc");}
@@ -55,15 +59,18 @@ export default function Home() {
         }
         return recordArray.map((record, index) => {
             function display() {
-                return (
-                    <tr onClick={() => openMenu(record)} key={index}>
-                        <td>{record.title}</td>
-                        <td>{record.amount}zł</td>
-                        <td>{record.category}</td>
-                        <td>{record.date}</td>
-                    </tr>
-                );
+                if(!hidden.includes(record.id)){
+                    return (
+                        <tr onClick={() => openMenu(record)} key={index}>
+                            <td>{record.title}</td>
+                            <td>{record.amount}zł</td>
+                            <td>{record.category}</td>
+                            <td>{record.date}</td>
+                        </tr>
+                    );
+                }
             }
+
             if (category === "Category") {
                 return display();
             }
@@ -119,6 +126,7 @@ export default function Home() {
                         </tbody>
                     </table>
                     <button onClick={closeMenu} className="x">X</button>
+                    <button onClick={()=> hide(selectedCharge.id)} className="hide">Hide</button>
                 </div>
             )
         }

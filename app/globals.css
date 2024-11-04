@@ -115,3 +115,7 @@ option{
 option:checked{
   background: #243950;
 }
+.hide{
+  position: absolute;
+  right: 15vw;
+}
