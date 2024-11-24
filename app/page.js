@@ -1,22 +1,22 @@
 "use client"
-import Data from "./Data/history.json"
-import React, {useState} from "react";
+import React from "react";
 import DisplayCategories from "@/app/Components/DisplayCategories";
 import DisplayPaymentHistory from "@/app/Components/DisplayPaymentHistory";
+import {useGlobalContext} from "@/app/GlobalContext";
 
 export default function Home() {
 
-    const [selectedCharge, setSelectedCharge] = useState(null);
-    const openMenu = (charge)=>{setSelectedCharge(charge);}
-    const closeMenu = () =>{setSelectedCharge(null);}
-
-    const [category, setCategory] = useState(()=>{return "Category"});
-    const changeCategory = (newCategory)=>{newCategory.target.value==="All" ? setCategory("Category") : setCategory(newCategory.target.value);}
-
-    const [sort, setSort] =useState(()=>{return "DateAsc"});
-    const changeSortToTitle = ()=>{sort==="Title" ? setSort("TitleRev") : setSort("Title");}
-    const changeSortToAmount = () => {sort==="AmountAsc" ? setSort("AmountDesc") : setSort("AmountAsc");}
-    const changerSortToDate = () => {sort==="DateAsc" ? setSort("DateDesc") : setSort("DateAsc");}
+    const {
+        selectedCharge,
+        openMenu,
+        closeMenu,
+        category,
+        changeCategory,
+        sort,
+        changeSortToTitle,
+        changeSortToAmount,
+        changerSortToDate
+    } = useGlobalContext();
 
     return (
         <div>
